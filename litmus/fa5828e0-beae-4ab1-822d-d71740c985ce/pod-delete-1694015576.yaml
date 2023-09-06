@@ -36,6 +36,9 @@ spec:
     - - arguments: {}
         name: revert-chaos
         template: revert-chaos
+    - - arguments: {}
+        name: echo-chaos
+        template: echo-chaos
   - container:
       args:
       - kubectl apply -f /tmp/pod-delete-qhm.yaml -n {{workflow.parameters.adminModeNamespace}}
@@ -259,6 +262,19 @@ spec:
     inputs: {}
     metadata: {}
     name: revert-chaos
+    outputs: {}
+- container:
+      args:
+      - echo "chaos"
+      command:
+      - bash
+      - -c
+      image: bash
+      name: ""
+      resources: {}
+    inputs: {}
+    metadata: {}
+    name: echo-chaos
     outputs: {}
 status:
   finishedAt: null
