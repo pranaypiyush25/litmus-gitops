@@ -176,7 +176,7 @@ spec:
                   - /bin/bash
                 env:
                   - name: TOTAL_CHAOS_DURATION
-                    value: "15"
+                    value: "30"
                   - name: RAMP_TIME
                     value: ""
                   - name: FORCE
