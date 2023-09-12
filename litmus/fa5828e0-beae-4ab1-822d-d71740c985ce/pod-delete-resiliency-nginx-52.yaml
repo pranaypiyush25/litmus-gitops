@@ -1,8 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
+  creationTimestamp: null
   labels:
     cluster_id: 2da22245-4a32-469d-977c-efa2a5592aba
+    workflow_id: 28770a34-2395-4fe2-9675-f1424b4ade75
+    workflows.argoproj.io/controller-instanceid: 2da22245-4a32-469d-977c-efa2a5592aba
   name: pod-delete-resiliency-nginx-52
   namespace: litmus
 spec:
@@ -258,4 +261,3 @@ spec:
 status:
   finishedAt: null
   startedAt: null
-            
