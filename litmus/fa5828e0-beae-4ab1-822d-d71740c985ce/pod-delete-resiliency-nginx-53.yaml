@@ -1,12 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  creationTimestamp: null
   labels:
     cluster_id: 2da22245-4a32-469d-977c-efa2a5592aba
-    workflow_id: 90beac82-b150-4a65-902c-7e7fcb3bd48b
-    workflows.argoproj.io/controller-instanceid: 2da22245-4a32-469d-977c-efa2a5592aba
-  name: pod-delete-resiliency-nginx-#49
+  name: pod-delete-resiliency-nginx-53
   namespace: litmus
 spec:
   arguments:
@@ -233,9 +230,9 @@ spec:
                     components:
                       env:
                         - name: TOTAL_CHAOS_DURATION
-                          value: "60"
+                          value: "15"
                         - name: CHAOS_INTERVAL
-                          value: "60"
+                          value: "5"
                         - name: FORCE
                           value: "false"
                         - name: PODS_AFFECTED_PERC
@@ -261,3 +258,4 @@ spec:
 status:
   finishedAt: null
   startedAt: null
+            
