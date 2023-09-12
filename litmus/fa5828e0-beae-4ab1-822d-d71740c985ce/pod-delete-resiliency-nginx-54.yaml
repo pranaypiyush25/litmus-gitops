@@ -3,7 +3,7 @@ kind: Workflow
 metadata:
   labels:
     cluster_id: 2da22245-4a32-469d-977c-efa2a5592aba
-  name: pod-delete-resiliency-nginx-53
+  name: pod-delete-resiliency-nginx-54
   namespace: litmus
 spec:
   arguments:
