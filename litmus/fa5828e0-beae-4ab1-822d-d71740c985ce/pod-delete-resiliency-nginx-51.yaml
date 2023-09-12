@@ -4,9 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     cluster_id: 2da22245-4a32-469d-977c-efa2a5592aba
-    workflow_id: 48540ae1-9b97-4afa-b489-e14e86062e3f
-    workflows.argoproj.io/controller-instanceid: 2da22245-4a32-469d-977c-efa2a5592aba
-  name: pod-delete-resiliency-nginx-50
+  name: pod-delete-resiliency-nginx-51
   namespace: litmus
 spec:
   arguments:
