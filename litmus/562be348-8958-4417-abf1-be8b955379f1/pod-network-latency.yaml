@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 1f46eb49-2884-4dfb-ace3-7771d5d6b411
+    revision_id: 07460bb7-cd67-41a6-ae70-1acb7ec43a87
     workflow_id: b13ebfbb-9b63-45a0-92ac-842b8a8133cd
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-network-latency
@@ -258,7 +258,7 @@ spec:
               engineState: active
               appinfo:
                 appns: di
-                applabel: app=di-management-service
+                applabel: app=di-aggregation-service
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -275,7 +275,7 @@ spec:
                         - name: TC_IMAGE
                           value: gaiadocker/iproute2
                         - name: NETWORK_LATENCY
-                          value: "3000"
+                          value: "4000"
                         - name: TOTAL_CHAOS_DURATION
                           value: "30"
                         - name: RAMP_TIME
