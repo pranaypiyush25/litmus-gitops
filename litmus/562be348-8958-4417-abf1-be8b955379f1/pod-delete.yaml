@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: c5296ba7-bce3-4900-9c58-bbaf3cd2c9fd
+    revision_id: f7d4a93d-ee5d-481c-91a2-fb3cceabddbf
     workflow_id: ee229ae8-1793-4df7-add4-bedbfdd6273a
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-delete
@@ -241,8 +241,8 @@ spec:
               generateName: pod-delete-s7l
             spec:
               appinfo:
-                appns: ui
-                applabel: app=integrator-bff
+                appns: di
+                applabel: app=di-aggregation-service
                 appkind: deployment
               engineState: active
               chaosServiceAccount: litmus-admin
@@ -260,7 +260,7 @@ spec:
                         - name: CHAOS_INTERVAL
                           value: "30"
                         - name: PODS_AFFECTED_PERC
-                          value: "100"
+                          value: "36"
                         - name: TARGET_CONTAINER
                           value: ""
                         - name: TARGET_PODS
