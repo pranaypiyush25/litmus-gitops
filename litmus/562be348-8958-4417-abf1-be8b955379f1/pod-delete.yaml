@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: f41db431-45ed-4f62-82a6-6e6b6f0eca0a
+    revision_id: aaaec5bf-d57e-4d54-8ea3-cf5429006b1e
     workflow_id: ee229ae8-1793-4df7-add4-bedbfdd6273a
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-delete
@@ -260,7 +260,7 @@ spec:
                         - name: CHAOS_INTERVAL
                           value: "30"
                         - name: PODS_AFFECTED_PERC
-                          value: "100"
+                          value: "50"
                         - name: TARGET_CONTAINER
                           value: ""
                         - name: TARGET_PODS
