@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: d9029d86-7107-4912-8879-9662a3b4976c
+    revision_id: 3bcbb2c8-b654-4640-a9fd-2491448f628f
     workflow_id: 46e347a0-6860-43f2-9ddc-b81559380a69
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-memory-hog
@@ -251,8 +251,8 @@ spec:
             spec:
               engineState: active
               appinfo:
-                appns: di
-                applabel: app=di-aggregation-service
+                appns: core
+                applabel: app=streaming-service
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -263,7 +263,7 @@ spec:
                         - name: TOTAL_CHAOS_DURATION
                           value: "60"
                         - name: MEMORY_CONSUMPTION
-                          value: "1024"
+                          value: "6000"
                         - name: NUMBER_OF_WORKERS
                           value: ""
                         - name: PODS_AFFECTED_PERC
@@ -283,7 +283,7 @@ spec:
                         - name: DEFAULT_HEALTH_CHECK
                           value: "false"
                         - name: TARGET_CONTAINER
-                          value: di-aggregation-service
+                          value: streaming-service
                         - name: TARGET_PODS
                           value: ""
                         - name: NODE_LABEL
