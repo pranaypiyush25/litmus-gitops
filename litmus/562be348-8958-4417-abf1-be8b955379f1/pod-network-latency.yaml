@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: ae16ea0b-1cdb-433a-8b14-8a349b01bf78
+    revision_id: 988862de-5ae6-4cb1-a67c-858d6d41cacf
     workflow_id: b13ebfbb-9b63-45a0-92ac-842b8a8133cd
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-network-latency
@@ -257,8 +257,8 @@ spec:
             spec:
               engineState: active
               appinfo:
-                appns: di
-                applabel: app=di-aggregation-service
+                appns: core
+                applabel: app=streaming-service
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
