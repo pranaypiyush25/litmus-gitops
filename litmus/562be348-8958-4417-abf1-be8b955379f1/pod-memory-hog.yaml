@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 9cf8fce8-cdec-48b7-954e-3bef717d41ff
+    revision_id: f27f8b99-4ccf-4eab-b0d5-5fb757efeb0d
     workflow_id: 46e347a0-6860-43f2-9ddc-b81559380a69
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-memory-hog
@@ -263,7 +263,7 @@ spec:
                         - name: TOTAL_CHAOS_DURATION
                           value: "60"
                         - name: MEMORY_CONSUMPTION
-                          value: "2147"
+                          value: "1536"
                         - name: NUMBER_OF_WORKERS
                           value: ""
                         - name: PODS_AFFECTED_PERC
