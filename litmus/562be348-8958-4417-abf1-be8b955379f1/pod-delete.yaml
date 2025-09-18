@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: e3683716-148d-40fb-9d72-a85dee148e2a
+    revision_id: 8feead08-321f-46e9-b391-b11aabcb8b0d
     workflow_id: ee229ae8-1793-4df7-add4-bedbfdd6273a
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-delete
@@ -241,8 +241,8 @@ spec:
               generateName: pod-delete-s7l
             spec:
               appinfo:
-                appns: core
-                applabel: app=streaming-service
+                appns: ia
+                applabel: app=amazon-netsuite-connector
                 appkind: deployment
               engineState: active
               chaosServiceAccount: litmus-admin
