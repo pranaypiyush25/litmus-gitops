@@ -1,0 +1,258 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  creationTimestamp: null
+  labels:
+    infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
+    revision_id: ab0673b4-c4da-41c6-aab8-56e74e4e2373
+    workflow_id: ea8acfb6-e7ee-4708-a815-49426ae85d07
+    workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
+  name: node-memory-hog
+  namespace: litmus
+spec:
+  arguments:
+    parameters:
+    - name: adminModeNamespace
+      value: litmus
+  entrypoint: node-memory-hog
+  podGC:
+    strategy: OnWorkflowCompletion
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+  serviceAccountName: argo-chaos
+  templates:
+  - inputs: {}
+    metadata: {}
+    name: node-memory-hog
+    outputs: {}
+    steps:
+    - - arguments: {}
+        name: install-chaos-faults
+        template: install-chaos-faults
+    - - arguments: {}
+        name: node-memory-hog-kbh
+        template: node-memory-hog-kbh
+    - - arguments: {}
+        name: cleanup-chaos-resources
+        template: cleanup-chaos-resources
+  - container:
+      args:
+      - kubectl apply -f /tmp/ -n {{workflow.parameters.adminModeNamespace}} && sleep
+        30
+      command:
+      - sh
+      - -c
+      image: litmuschaos/k8s:2.11.0
+      name: ""
+      resources: {}
+    inputs:
+      artifacts:
+      - name: node-memory-hog-kbh
+        path: /tmp/node-memory-hog-kbh.yaml
+        raw:
+          data: |
+            apiVersion: litmuschaos.io/v1alpha1
+            description:
+              message: |
+                Give a memory hog on a node belonging to a deployment
+            kind: ChaosExperiment
+            metadata:
+              name: node-memory-hog
+              labels:
+                name: node-memory-hog
+                app.kubernetes.io/part-of: litmus
+                app.kubernetes.io/component: chaosexperiment
+                app.kubernetes.io/version: 3.16.0
+            spec:
+              definition:
+                scope: Cluster
+                permissions:
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - pods
+                    verbs:
+                      - create
+                      - delete
+                      - get
+                      - list
+                      - patch
+                      - update
+                      - deletecollection
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - events
+                    verbs:
+                      - create
+                      - get
+                      - list
+                      - patch
+                      - update
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - configmaps
+                    verbs:
+                      - get
+                      - list
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - pods/log
+                    verbs:
+                      - get
+                      - list
+                      - watch
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - pods/exec
+                    verbs:
+                      - get
+                      - list
+                      - create
+                  - apiGroups:
+                      - batch
+                    resources:
+                      - jobs
+                    verbs:
+                      - create
+                      - list
+                      - get
+                      - delete
+                      - deletecollection
+                  - apiGroups:
+                      - litmuschaos.io
+                    resources:
+                      - chaosengines
+                      - chaosexperiments
+                      - chaosresults
+                    verbs:
+                      - create
+                      - list
+                      - get
+                      - patch
+                      - update
+                      - delete
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - nodes
+                    verbs:
+                      - get
+                      - list
+                image: litmuschaos.docker.scarf.sh/litmuschaos/go-runner:3.16.0
+                imagePullPolicy: Always
+                args:
+                  - -c
+                  - ./experiments -name node-memory-hog
+                command:
+                  - /bin/bash
+                env:
+                  - name: TOTAL_CHAOS_DURATION
+                    value: "120"
+                  - name: MEMORY_CONSUMPTION_PERCENTAGE
+                    value: ""
+                  - name: MEMORY_CONSUMPTION_MEBIBYTES
+                    value: ""
+                  - name: NUMBER_OF_WORKERS
+                    value: "1"
+                  - name: TARGET_NODES
+                    value: ""
+                  - name: NODE_LABEL
+                    value: ""
+                  - name: RAMP_TIME
+                    value: ""
+                  - name: LIB_IMAGE
+                    value: litmuschaos.docker.scarf.sh/litmuschaos/go-runner:3.16.0
+                  - name: DEFAULT_HEALTH_CHECK
+                    value: "false"
+                  - name: NODES_AFFECTED_PERC
+                    value: ""
+                  - name: SEQUENCE
+                    value: parallel
+                labels:
+                  name: node-memory-hog
+                  app.kubernetes.io/part-of: litmus
+                  app.kubernetes.io/component: experiment-job
+                  app.kubernetes.io/version: 3.16.0
+    metadata: {}
+    name: install-chaos-faults
+    outputs: {}
+  - container:
+      args:
+      - kubectl delete chaosengine -l workflow_run_id={{workflow.uid}} -n {{workflow.parameters.adminModeNamespace}}
+      command:
+      - sh
+      - -c
+      image: litmuschaos/k8s:2.11.0
+      name: ""
+      resources: {}
+    inputs: {}
+    metadata: {}
+    name: cleanup-chaos-resources
+    outputs: {}
+  - container:
+      args:
+      - -file=/tmp/chaosengine-node-memory-hog-kbh.yaml
+      - -saveName=/tmp/engine-name
+      image: docker.io/litmuschaos/litmus-checker:2.11.0
+      name: ""
+      resources: {}
+    inputs:
+      artifacts:
+      - name: node-memory-hog-kbh
+        path: /tmp/chaosengine-node-memory-hog-kbh.yaml
+        raw:
+          data: |
+            apiVersion: litmuschaos.io/v1alpha1
+            kind: ChaosEngine
+            metadata:
+              namespace: "{{workflow.parameters.adminModeNamespace}}"
+              labels:
+                workflow_run_id: "{{ workflow.uid }}"
+                workflow_name: node-memory-hog
+              annotations:
+                probeRef: '[{"name":"app-health-probe","mode":"Edge"}]'
+              generateName: node-memory-hog-kbh
+            spec:
+              engineState: active
+              auxiliaryAppInfo: ""
+              chaosServiceAccount: litmus-admin
+              experiments:
+                - name: node-memory-hog
+                  spec:
+                    components:
+                      env:
+                        - name: TOTAL_CHAOS_DURATION
+                          value: "60"
+                        - name: MEMORY_CONSUMPTION_PERCENTAGE
+                          value: "100"
+                        - name: MEMORY_CONSUMPTION_MEBIBYTES
+                          value: ""
+                        - name: NUMBER_OF_WORKERS
+                          value: "0"
+                        - name: TARGET_NODES
+                          value: ip-172-31-134-101.ap-south-1.compute.internal
+                        - name: NODE_LABEL
+                          value: ""
+                        - name: RAMP_TIME
+                          value: ""
+                        - name: LIB_IMAGE
+                          value: litmuschaos.docker.scarf.sh/litmuschaos/go-runner:3.16.0
+                        - name: DEFAULT_HEALTH_CHECK
+                          value: "false"
+                        - name: NODES_AFFECTED_PERC
+                          value: "100"
+                        - name: SEQUENCE
+                          value: parallel
+    metadata:
+      labels:
+        weight: "10"
+    name: node-memory-hog-kbh
+    outputs: {}
+status:
+  finishedAt: null
+  startedAt: null
