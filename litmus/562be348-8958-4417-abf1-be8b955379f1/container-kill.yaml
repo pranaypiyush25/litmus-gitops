@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: bef1ee4b-7fa5-4c92-acce-02d4e5279467
+    revision_id: b4d91a84-8857-4624-9603-a7a2497a5686
     workflow_id: 5d1f7702-9edf-4359-8307-29a88b76b01b
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: container-kill
@@ -141,7 +141,7 @@ spec:
               engineState: active
               appinfo:
                 appns: ia
-                applabel: app=amazon-netsuite-connector
+                applabel: app=shopify-netsuite-connector
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -150,7 +150,7 @@ spec:
                     components:
                       env:
                         - name: TARGET_CONTAINER
-                          value: amazon-netsuite-connector
+                          value: shopify-netsuite-connector
                         - name: RAMP_TIME
                           value: ""
                         - name: TARGET_PODS
