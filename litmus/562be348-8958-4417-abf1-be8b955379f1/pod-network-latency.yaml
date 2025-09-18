@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: d02ead00-1c3e-4b74-b8c8-43babaee3d7d
+    revision_id: cf4deced-7e2d-479c-be11-8412fa0da613
     workflow_id: b13ebfbb-9b63-45a0-92ac-842b8a8133cd
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-network-latency
@@ -257,8 +257,8 @@ spec:
             spec:
               engineState: active
               appinfo:
-                appns: core
-                applabel: app=streaming-service
+                appns: ia
+                applabel: app=shopify-netsuite-connector
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -267,7 +267,7 @@ spec:
                     components:
                       env:
                         - name: TARGET_CONTAINER
-                          value: ""
+                          value: shopify-netsuite-connector
                         - name: NETWORK_INTERFACE
                           value: eth0
                         - name: LIB_IMAGE
@@ -275,13 +275,13 @@ spec:
                         - name: TC_IMAGE
                           value: gaiadocker/iproute2
                         - name: NETWORK_LATENCY
-                          value: "4000"
+                          value: "3500"
                         - name: TOTAL_CHAOS_DURATION
                           value: "30"
                         - name: RAMP_TIME
                           value: ""
                         - name: JITTER
-                          value: "0"
+                          value: "250"
                         - name: PODS_AFFECTED_PERC
                           value: "100"
                         - name: TARGET_PODS
