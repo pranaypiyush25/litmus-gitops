@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: c15e66ec-7ff7-4ca4-9ea0-600e3faadbc9
+    revision_id: 8ad399b3-d455-4f1c-a82e-d470d6d7d653
     workflow_id: ee229ae8-1793-4df7-add4-bedbfdd6273a
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-delete
@@ -242,7 +242,7 @@ spec:
             spec:
               appinfo:
                 appns: ia
-                applabel: app=shopify-netsuite-connector
+                applabel: app=amazon-netsuite-connector
                 appkind: deployment
               engineState: active
               chaosServiceAccount: litmus-admin
@@ -260,7 +260,7 @@ spec:
                         - name: CHAOS_INTERVAL
                           value: "30"
                         - name: PODS_AFFECTED_PERC
-                          value: "100"
+                          value: "50"
                         - name: TARGET_CONTAINER
                           value: ""
                         - name: TARGET_PODS
