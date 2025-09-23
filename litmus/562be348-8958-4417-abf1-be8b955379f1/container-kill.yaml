@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 2738fe32-3727-4e5e-994f-81ce939d13cf
+    revision_id: 30fa3b77-ecb4-43cd-afc5-73c818922a8c
     workflow_id: 5d1f7702-9edf-4359-8307-29a88b76b01b
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: container-kill
@@ -166,7 +166,7 @@ spec:
                         - name: TOTAL_CHAOS_DURATION
                           value: "30"
                         - name: PODS_AFFECTED_PERC
-                          value: "50"
+                          value: "100"
                         - name: NODE_LABEL
                           value: ""
                         - name: DEFAULT_HEALTH_CHECK
