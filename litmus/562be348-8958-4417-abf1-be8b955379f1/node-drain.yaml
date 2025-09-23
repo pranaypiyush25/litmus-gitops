@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 831de2af-f586-4325-82e2-81d456e30f7b
+    revision_id: e84e7d0e-b637-46e8-9966-6c3e205c8446
     workflow_id: 044bee1a-eee5-4917-9c24-202947e96440
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: node-drain
@@ -225,7 +225,7 @@ spec:
                     components:
                       env:
                         - name: TARGET_NODE
-                          value: ip-172-31-134-101.ap-south-1.compute.internal
+                          value: ip-172-31-134-128.ap-south-1.compute.internal
                         - name: NODE_LABEL
                           value: ""
                         - name: TOTAL_CHAOS_DURATION
