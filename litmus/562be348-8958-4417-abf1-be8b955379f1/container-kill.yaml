@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: aad748fb-e0d6-4cdb-95ab-5b1c53a97c34
+    revision_id: 9973934a-35ae-423f-a6dd-acbc637beb74
     workflow_id: 5d1f7702-9edf-4359-8307-29a88b76b01b
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: container-kill
