@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: f27f8b99-4ccf-4eab-b0d5-5fb757efeb0d
+    revision_id: 6249156e-7ac3-4c7e-9d14-1afee547b709
     workflow_id: 46e347a0-6860-43f2-9ddc-b81559380a69
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-memory-hog
@@ -252,7 +252,7 @@ spec:
               engineState: active
               appinfo:
                 appns: ia
-                applabel: app=shopify-netsuite-connector
+                applabel: app=amazon-netsuite-connector
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -283,7 +283,7 @@ spec:
                         - name: DEFAULT_HEALTH_CHECK
                           value: "false"
                         - name: TARGET_CONTAINER
-                          value: shopify-netsuite-connector
+                          value: amazon-netsuite-connector
                         - name: TARGET_PODS
                           value: ""
                         - name: NODE_LABEL
