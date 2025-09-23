@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: d53e8130-457e-4827-bf84-13555e018fdb
+    revision_id: 9c849a66-fcb8-4a0f-b2b0-b31c38bb0c3c
     workflow_id: 9ac4ae51-3c5f-456a-af67-97ead5a7662d
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-cpu-hog
@@ -252,7 +252,7 @@ spec:
               engineState: active
               appinfo:
                 appns: ia
-                applabel: app=shopify-netsuite-connector
+                applabel: app=amazon-netsuite-connector
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -279,7 +279,7 @@ spec:
                         - name: SOCKET_PATH
                           value: /run/containerd/containerd.sock
                         - name: TARGET_CONTAINER
-                          value: shopify-netsuite-connector
+                          value: amazon-netsuite-connector
                         - name: TARGET_PODS
                           value: ""
                         - name: DEFAULT_HEALTH_CHECK
