@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 4181ca75-63b9-4ef7-916f-6985728f5031
+    revision_id: 7c04876b-9ff9-4d49-80b2-00c2a50fa906
     workflow_id: b13ebfbb-9b63-45a0-92ac-842b8a8133cd
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-network-latency
@@ -275,7 +275,7 @@ spec:
                         - name: TC_IMAGE
                           value: gaiadocker/iproute2
                         - name: NETWORK_LATENCY
-                          value: "4000"
+                          value: "7000"
                         - name: TOTAL_CHAOS_DURATION
                           value: "30"
                         - name: RAMP_TIME
@@ -283,7 +283,7 @@ spec:
                         - name: JITTER
                           value: "250"
                         - name: PODS_AFFECTED_PERC
-                          value: "50"
+                          value: "100"
                         - name: TARGET_PODS
                           value: ""
                         - name: CONTAINER_RUNTIME
