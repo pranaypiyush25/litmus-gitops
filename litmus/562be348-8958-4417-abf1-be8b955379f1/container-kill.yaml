@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 30fa3b77-ecb4-43cd-afc5-73c818922a8c
+    revision_id: c7d3a9ea-acf5-43e8-aa35-f6c243ce7c1d
     workflow_id: 5d1f7702-9edf-4359-8307-29a88b76b01b
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: container-kill
@@ -140,8 +140,8 @@ spec:
             spec:
               engineState: active
               appinfo:
-                appns: ia
-                applabel: app=amazon-netsuite-connector
+                appns: io
+                applabel: app=js-runtime
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -150,7 +150,7 @@ spec:
                     components:
                       env:
                         - name: TARGET_CONTAINER
-                          value: amazon-netsuite-connector
+                          value: js-runtime
                         - name: RAMP_TIME
                           value: ""
                         - name: TARGET_PODS
@@ -166,7 +166,7 @@ spec:
                         - name: TOTAL_CHAOS_DURATION
                           value: "30"
                         - name: PODS_AFFECTED_PERC
-                          value: "100"
+                          value: "50"
                         - name: NODE_LABEL
                           value: ""
                         - name: DEFAULT_HEALTH_CHECK
