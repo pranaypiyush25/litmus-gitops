@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 9d4d7166-0704-4fda-91d8-8843e83cdaac
+    revision_id: 45812f0e-d924-4ac3-a8be-52883c5fde58
     workflow_id: 46e347a0-6860-43f2-9ddc-b81559380a69
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-memory-hog
