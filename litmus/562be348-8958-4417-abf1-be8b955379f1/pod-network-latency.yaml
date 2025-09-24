@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 7c04876b-9ff9-4d49-80b2-00c2a50fa906
+    revision_id: 2fe30409-af8e-4232-9fdc-cc0ba6c87b67
     workflow_id: b13ebfbb-9b63-45a0-92ac-842b8a8133cd
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-network-latency
@@ -257,8 +257,8 @@ spec:
             spec:
               engineState: active
               appinfo:
-                appns: ia
-                applabel: app=amazon-netsuite-connector
+                appns: io
+                applabel: app=js-runtime
                 appkind: deployment
               chaosServiceAccount: litmus-admin
               experiments:
@@ -267,7 +267,7 @@ spec:
                     components:
                       env:
                         - name: TARGET_CONTAINER
-                          value: amazon-netsuite-connector
+                          value: js-runtime
                         - name: NETWORK_INTERFACE
                           value: eth0
                         - name: LIB_IMAGE
@@ -275,7 +275,7 @@ spec:
                         - name: TC_IMAGE
                           value: gaiadocker/iproute2
                         - name: NETWORK_LATENCY
-                          value: "7000"
+                          value: "4000"
                         - name: TOTAL_CHAOS_DURATION
                           value: "30"
                         - name: RAMP_TIME
