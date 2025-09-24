@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 815b79cf-a9be-4eef-be48-6442281beff6
+    revision_id: 3fe0bbee-b265-4ceb-a0bc-9d8f5f1a1a5e
     workflow_id: ea8acfb6-e7ee-4708-a815-49426ae85d07
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: node-memory-hog
