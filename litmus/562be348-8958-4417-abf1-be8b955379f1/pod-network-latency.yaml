@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 7e76fee3-62b5-4c9b-8947-c8f788ef3af7
+    revision_id: a5316be8-3d56-4a9a-88e5-0729262ade41
     workflow_id: b13ebfbb-9b63-45a0-92ac-842b8a8133cd
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-network-latency
@@ -283,7 +283,7 @@ spec:
                         - name: JITTER
                           value: "250"
                         - name: PODS_AFFECTED_PERC
-                          value: "50"
+                          value: "100"
                         - name: TARGET_PODS
                           value: ""
                         - name: CONTAINER_RUNTIME
