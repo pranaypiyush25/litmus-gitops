@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: fb74c536-0f26-4219-a118-d21eb9c9b8f8
+    revision_id: f23dd7f0-ada5-48c0-b46f-8f1dfda29cd6
     workflow_id: 044bee1a-eee5-4917-9c24-202947e96440
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: node-drain
