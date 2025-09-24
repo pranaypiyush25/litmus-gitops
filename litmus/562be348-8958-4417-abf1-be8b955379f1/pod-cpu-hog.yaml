@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 406b6634-0e93-4c2f-a1ab-67db2f6354f4
+    revision_id: b3abd1cc-1c3a-42dc-b3e7-024ab26499cc
     workflow_id: 9ac4ae51-3c5f-456a-af67-97ead5a7662d
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: pod-cpu-hog
@@ -261,7 +261,7 @@ spec:
                     components:
                       env:
                         - name: TOTAL_CHAOS_DURATION
-                          value: "60"
+                          value: 180s
                         - name: CPU_CORES
                           value: ""
                         - name: CPU_LOAD
