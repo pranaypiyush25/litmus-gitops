@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 4cb11014-f659-4f44-a72a-da50eaa1278a
-    revision_id: 7e569ccd-af4d-4238-aea5-4f3d2f5d7757
+    revision_id: 936c1e7a-e975-4d67-abd1-ffea01dd59c1
     workflow_id: 6001af08-1499-4b5b-a920-dc55cc1029da
     workflows.argoproj.io/controller-instanceid: 4cb11014-f659-4f44-a72a-da50eaa1278a
   name: node-cpu-hog
